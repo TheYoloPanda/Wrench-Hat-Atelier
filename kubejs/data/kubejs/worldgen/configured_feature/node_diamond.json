@@ -1,0 +1,34 @@
+{
+  "type": "createreautomated:encased_node",
+  "config": {
+    "facesOverride": 0,
+    "targets": [
+      {
+        "state": {
+          "Name": "createreautomated:diamond_node",
+          "Properties": {
+            "depletion": "0",
+            "stable": "false"
+          }
+        },
+        "target": {
+          "predicate_type": "minecraft:tag_match",
+          "tag": "minecraft:stone_ore_replaceables"
+        }
+      },
+      {
+        "state": {
+          "Name": "createreautomated:deepslate_diamond_node",
+          "Properties": {
+            "depletion": "0",
+            "stable": "false"
+          }
+        },
+        "target": {
+          "predicate_type": "minecraft:tag_match",
+          "tag": "minecraft:deepslate_ore_replaceables"
+        }
+      }
+    ]
+  }
+}

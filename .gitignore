@@ -1,0 +1,14 @@
+# Ignore everything
+*
+
+# Except these files
+!.gitignore 
+
+# Keep kubejs and everything inside it
+!kubejs/**
+!kubejs/
+
+# Keep only config/iceandfire and everything inside it
+!config/
+!config/iceandfire/
+!config/iceandfire/**

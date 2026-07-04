@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    "kubejs:spawn_coal_ore",
+    "kubejs:spawn_iron_ore",
+    "kubejs:spawn_iron_small_ore",
+    "kubejs:spawn_copper_ore",
+    "kubejs:spawn_copper_large_ore",
+    "kubejs:spawn_gold_ore",
+    "kubejs:spawn_redstone_ore",
+    "kubejs:spawn_lapis_ore",
+    "kubejs:spawn_diamond_ore",
+    "kubejs:spawn_diamond_large_ore",
+    "kubejs:spawn_emerald_ore",
+    "kubejs:spawn_create_zinc_ore",
+    "kubejs:spawn_create_striated_overworld_ores",
+    "kubejs:spawn_node_iron_upper",
+    "kubejs:spawn_node_iron_middle",
+    "kubejs:spawn_node_iron_small",
+    "kubejs:spawn_node_copper",
+    "kubejs:spawn_node_gold",
+    "kubejs:spawn_node_gold_lower",
+    "kubejs:spawn_node_diamond",
+    "kubejs:spawn_node_diamond_buried",
+    "kubejs:spawn_node_diamond_medium",
+    "kubejs:spawn_node_diamond_large",
+    "kubejs:spawn_node_zinc",
+    "kubejs:spawn_draconium_overworld_ore",
+    "kubejs:spawn_iceandfire_silver_ore",
+    "kubejs:spawn_iceandfire_sapphire_ore",
+    "kubejs:spawn_mithril_ore"
+  ]
+}
