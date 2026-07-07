@@ -1,5 +1,0 @@
-{
-  "type": "neoforge:remove_features",
-  "biomes": "#minecraft:is_nether",
-  "features": "#kubejs:all_ores_to_remove"
-}

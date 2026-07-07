@@ -12,3 +12,5 @@
 !config/
 !config/iceandfire/
 !config/iceandfire/**
+
+!config/createreautomated-common.toml
