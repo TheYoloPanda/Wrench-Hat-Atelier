@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_badlands",
+  "features": "wrench_hat_atelier:families/gold_badlands_bonus",
+  "step": "underground_ores"
+}

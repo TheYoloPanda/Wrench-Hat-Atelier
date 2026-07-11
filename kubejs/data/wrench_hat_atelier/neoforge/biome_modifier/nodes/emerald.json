@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_mountain",
+  "features": "wrench_hat_atelier:families/emerald",
+  "step": "underground_ores"
+}

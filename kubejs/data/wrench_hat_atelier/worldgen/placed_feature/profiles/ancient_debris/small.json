@@ -1,0 +1,17 @@
+{
+  "feature": "wrench_hat_atelier:node_blocks/ancient_debris",
+  "placement": [
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:uniform",
+        "min_inclusive": {
+          "absolute": 8
+        },
+        "max_inclusive": {
+          "below_top": 8
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:replace_single_block",
+  "config": {
+    "targets": [
+      {
+        "target": {
+          "predicate_type": "minecraft:tag_match",
+          "tag": "minecraft:base_stone_nether"
+        },
+        "state": {
+          "Name": "createreautomated:nether_gold_node",
+          "Properties": {
+            "depletion": "0",
+            "stable": "false"
+          }
+        }
+      }
+    ]
+  }
+}

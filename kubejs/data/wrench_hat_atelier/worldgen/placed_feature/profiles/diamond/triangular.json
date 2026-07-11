@@ -1,0 +1,17 @@
+{
+  "feature": "wrench_hat_atelier:node_blocks/diamond",
+  "placement": [
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:trapezoid",
+        "min_inclusive": {
+          "above_bottom": -80
+        },
+        "max_inclusive": {
+          "above_bottom": 80
+        }
+      }
+    }
+  ]
+}

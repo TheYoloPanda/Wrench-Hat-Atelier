@@ -1,0 +1,15 @@
+{
+  "feature": "wrench_hat_atelier:family_selectors/iron",
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 513
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

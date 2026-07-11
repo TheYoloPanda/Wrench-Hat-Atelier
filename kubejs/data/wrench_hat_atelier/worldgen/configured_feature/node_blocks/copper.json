@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:replace_single_block",
+  "config": {
+    "targets": [
+      {
+        "target": {
+          "predicate_type": "minecraft:tag_match",
+          "tag": "minecraft:stone_ore_replaceables"
+        },
+        "state": {
+          "Name": "createreautomated:copper_node",
+          "Properties": {
+            "depletion": "0",
+            "stable": "false"
+          }
+        }
+      },
+      {
+        "target": {
+          "predicate_type": "minecraft:tag_match",
+          "tag": "minecraft:deepslate_ore_replaceables"
+        },
+        "state": {
+          "Name": "createreautomated:deepslate_copper_node",
+          "Properties": {
+            "depletion": "0",
+            "stable": "false"
+          }
+        }
+      }
+    ]
+  }
+}

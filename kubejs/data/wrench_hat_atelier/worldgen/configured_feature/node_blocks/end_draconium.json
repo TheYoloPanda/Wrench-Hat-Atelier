@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:replace_single_block",
+  "config": {
+    "targets": [
+      {
+        "target": {
+          "predicate_type": "minecraft:block_match",
+          "block": "minecraft:end_stone"
+        },
+        "state": {
+          "Name": "kubejs:end_draconium_node",
+          "Properties": {
+            "depletion": "0",
+            "stable": "false"
+          }
+        }
+      },
+      {
+        "target": {
+          "predicate_type": "minecraft:tag_match",
+          "tag": "minecraft:base_stone_end"
+        },
+        "state": {
+          "Name": "kubejs:end_draconium_node",
+          "Properties": {
+            "depletion": "0",
+            "stable": "false"
+          }
+        }
+      }
+    ]
+  }
+}

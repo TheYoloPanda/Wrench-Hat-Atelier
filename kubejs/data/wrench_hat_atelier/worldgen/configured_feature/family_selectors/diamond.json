@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "features": [
+      {
+        "chance": 0.847457627118644,
+        "feature": "wrench_hat_atelier:profiles/diamond/triangular"
+      }
+    ],
+    "default": "wrench_hat_atelier:profiles/diamond/medium"
+  }
+}

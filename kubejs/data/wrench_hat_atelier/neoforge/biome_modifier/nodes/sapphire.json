@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#iceandfire:ore_gen/sapphire",
+  "features": "wrench_hat_atelier:families/sapphire",
+  "step": "underground_ores"
+}

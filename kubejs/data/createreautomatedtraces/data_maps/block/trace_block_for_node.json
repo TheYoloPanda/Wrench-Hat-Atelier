@@ -1,0 +1,100 @@
+{
+  "replace": false,
+  "values": {
+    "createreautomated:ancient_debris_node": {
+      "trace_block": "minecraft:ancient_debris"
+    },
+    "kubejs:coal_node": {
+      "trace_block": "minecraft:coal_ore",
+      "beam_color": "#5B5B5B"
+    },
+    "kubejs:deepslate_coal_node": {
+      "trace_block": "minecraft:deepslate_coal_ore",
+      "beam_color": "#5B5B5B"
+    },
+    "kubejs:redstone_node": {
+      "trace_block": "minecraft:redstone_ore",
+      "beam_color": "#FF2A2A"
+    },
+    "kubejs:deepslate_redstone_node": {
+      "trace_block": "minecraft:deepslate_redstone_ore",
+      "beam_color": "#FF2A2A"
+    },
+    "kubejs:emerald_node": {
+      "trace_block": "minecraft:emerald_ore",
+      "beam_color": "#37D66B"
+    },
+    "kubejs:deepslate_emerald_node": {
+      "trace_block": "minecraft:deepslate_emerald_ore",
+      "beam_color": "#37D66B"
+    },
+    "kubejs:lapis_node": {
+      "trace_block": "minecraft:lapis_ore",
+      "beam_color": "#345CEB"
+    },
+    "kubejs:deepslate_lapis_node": {
+      "trace_block": "minecraft:deepslate_lapis_ore",
+      "beam_color": "#345CEB"
+    },
+    "kubejs:nether_quartz_node": {
+      "trace_block": "minecraft:nether_quartz_ore",
+      "beam_color": "#F2EAD8"
+    },
+    "kubejs:bort_node": {
+      "trace_block": "silentgear:bort_ore",
+      "beam_color": "#C9D6FF"
+    },
+    "kubejs:deepslate_bort_node": {
+      "trace_block": "silentgear:deepslate_bort_ore",
+      "beam_color": "#C9D6FF"
+    },
+    "kubejs:mithril_node": {
+      "trace_block": "irons_spellbooks:mithril_ore",
+      "beam_color": "#A7D7E8"
+    },
+    "kubejs:deepslate_mithril_node": {
+      "trace_block": "irons_spellbooks:deepslate_mithril_ore",
+      "beam_color": "#A7D7E8"
+    },
+    "kubejs:silver_node": {
+      "trace_block": "occultism:silver_ore",
+      "beam_color": "#D8E0E4"
+    },
+    "kubejs:deepslate_silver_node": {
+      "trace_block": "occultism:silver_ore_deepslate",
+      "beam_color": "#D8E0E4"
+    },
+    "kubejs:sapphire_node": {
+      "trace_block": "iceandfire:sapphire_ore",
+      "beam_color": "#387BFF"
+    },
+    "kubejs:overworld_draconium_node": {
+      "trace_block": "draconicevolution:overworld_draconium_ore",
+      "beam_color": "#9A4CFF"
+    },
+    "kubejs:deepslate_draconium_node": {
+      "trace_block": "draconicevolution:deepslate_draconium_ore",
+      "beam_color": "#9A4CFF"
+    },
+    "kubejs:nether_draconium_node": {
+      "trace_block": "draconicevolution:nether_draconium_ore",
+      "beam_color": "#9A4CFF"
+    },
+    "kubejs:end_draconium_node": {
+      "trace_block": "draconicevolution:end_draconium_ore",
+      "beam_color": "#B366FF"
+    },
+    "kubejs:crimson_iron_node": {
+      "trace_block": "silentgear:crimson_iron_ore",
+      "beam_color": "#C84242"
+    },
+    "kubejs:blackstone_crimson_iron_node": {
+      "trace_block": "silentgear:blackstone_crimson_iron_ore",
+      "beam_color": "#C84242"
+    },
+    "kubejs:azure_silver_node": {
+      "trace_block": "silentgear:azure_silver_ore",
+      "beam_color": "#66D7FF"
+    }
+  }
+}

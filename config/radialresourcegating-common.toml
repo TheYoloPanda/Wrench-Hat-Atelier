@@ -1,0 +1,42 @@
+blockedTags = ["c:ores", "c:ores/sapphire"]
+additionalBlockedBlocks = []
+outsideAllowedBlocks = ['occultism:iesnium_ore', 'kubejs:deepslate_silver_node', 'kubejs:sapphire_node', 'kubejs:overworld_draconium_node', 'createreautomated:deepslate_zinc_node', 'kubejs:crimson_iron_node', 'createreautomated:deepslate_iron_node', 'kubejs:deepslate_draconium_node', 'createreautomated:deepslate_gold_node', 'kubejs:deepslate_coal_node', 'kubejs:lapis_node', 'kubejs:silver_node', 'kubejs:deepslate_redstone_node', 'createreautomated:deepslate_diamond_node', 'kubejs:bort_node', 'kubejs:emerald_node', 'kubejs:deepslate_mithril_node', 'kubejs:deepslate_emerald_node', 'kubejs:deepslate_lapis_node', 'kubejs:nether_draconium_node', 'kubejs:mithril_node', 'kubejs:nether_quartz_node', 'createreautomated:diamond_node', 'kubejs:coal_node', 'createreautomated:deepslate_copper_node', 'kubejs:azure_silver_node', 'kubejs:deepslate_bort_node', 'kubejs:blackstone_crimson_iron_node', 'createreautomated:nether_gold_node', 'createreautomated:ancient_debris_node', 'kubejs:end_draconium_node', 'kubejs:redstone_node', 'createreautomated:copper_node', 'createreautomated:zinc_node', 'createreautomated:iron_node', 'createreautomated:gold_node']
+
+[overworld]
+	enabled = true
+	centerMode = "world_spawn"
+	# Default: 0
+	# Range: > -2147483648
+	centerX = 0
+	# Default: 0
+	# Range: > -2147483648
+	centerZ = 0
+	# Default: 256
+	# Range: > 0
+	range = 256
+
+[nether]
+	enabled = true
+	centerMode = "world_spawn"
+	# Default: 0
+	# Range: > -2147483648
+	centerX = 0
+	# Default: 0
+	# Range: > -2147483648
+	centerZ = 0
+	# Default: 256
+	# Range: > 0
+	range = 256
+
+[end]
+	enabled = true
+	centerMode = "world_spawn"
+	# Default: 0
+	# Range: > -2147483648
+	centerX = 0
+	# Default: 0
+	# Range: > -2147483648
+	centerZ = 0
+	# Default: 256
+	# Range: > 0
+	range = 256

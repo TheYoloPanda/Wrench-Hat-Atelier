@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "features": [
+      {
+        "chance": 0.6,
+        "feature": "wrench_hat_atelier:profiles/coal/upper"
+      }
+    ],
+    "default": "wrench_hat_atelier:profiles/coal/lower"
+  }
+}

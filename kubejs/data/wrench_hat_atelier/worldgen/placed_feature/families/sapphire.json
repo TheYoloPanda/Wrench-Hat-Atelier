@@ -1,0 +1,27 @@
+{
+  "feature": "wrench_hat_atelier:node_blocks/sapphire",
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 2052
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:trapezoid",
+        "min_inclusive": {
+          "absolute": -16
+        },
+        "max_inclusive": {
+          "absolute": 112
+        }
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

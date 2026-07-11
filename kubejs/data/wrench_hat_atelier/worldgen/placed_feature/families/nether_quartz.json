@@ -1,0 +1,27 @@
+{
+  "feature": "wrench_hat_atelier:node_blocks/nether_quartz",
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 207
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:uniform",
+        "min_inclusive": {
+          "absolute": 10
+        },
+        "max_inclusive": {
+          "below_top": 10
+        }
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

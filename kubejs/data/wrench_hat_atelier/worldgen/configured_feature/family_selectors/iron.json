@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "features": [
+      {
+        "chance": 0.8181818181818182,
+        "feature": "wrench_hat_atelier:profiles/iron/upper"
+      },
+      {
+        "chance": 0.5,
+        "feature": "wrench_hat_atelier:profiles/iron/middle"
+      }
+    ],
+    "default": "wrench_hat_atelier:profiles/iron/small"
+  }
+}

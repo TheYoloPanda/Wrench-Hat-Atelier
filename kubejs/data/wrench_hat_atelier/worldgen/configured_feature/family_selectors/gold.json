@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "features": [
+      {
+        "chance": 0.8888888888888888,
+        "feature": "wrench_hat_atelier:profiles/gold/main"
+      }
+    ],
+    "default": "wrench_hat_atelier:profiles/gold/lower"
+  }
+}
