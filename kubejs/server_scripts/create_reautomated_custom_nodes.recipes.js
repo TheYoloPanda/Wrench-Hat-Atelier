@@ -1,16 +1,50 @@
 function addExtracting(event, recipe) {
-  event.custom({
+  const extracting = {
     type: 'createreautomated:extracting',
     ingredients: [{ tag: recipe.drillTag }],
     node: recipe.node,
     processing_time: recipe.processingTime,
-    extractionQuantity: recipe.extractionQuantity,
-    durabilityCost: recipe.durabilityCost,
     results: [
       { count: recipe.outputCount, id: recipe.output },
       { chance: 0.01, id: 'createreautomated:node_fragment' }
     ]
-  }).id(`kubejs:create_reautomated/extracting/${recipe.id}`)
+  }
+
+  if (recipe.extractionQuantity !== undefined) {
+    extracting.extractionQuantity = recipe.extractionQuantity
+  }
+
+  if (recipe.durabilityCost !== undefined) {
+    extracting.durabilityCost = recipe.durabilityCost
+  }
+
+  event.custom(extracting).id(`kubejs:create_reautomated/extracting/${recipe.id}`)
+}
+
+function addAdvancedExtracting(event, recipe) {
+  const extracting = {
+    type: 'createreautomated:advanced_extracting',
+    ingredients: [
+      { tag: recipe.drillTag },
+      { type: 'neoforge:single', amount: recipe.fluidAmount, fluid: recipe.fluid }
+    ],
+    node: recipe.node,
+    processing_time: recipe.processingTime,
+    results: [
+      { count: recipe.outputCount, id: recipe.output },
+      { chance: 0.01, id: 'createreautomated:node_fragment' }
+    ]
+  }
+
+  if (recipe.extractionQuantity !== undefined) {
+    extracting.extractionQuantity = recipe.extractionQuantity
+  }
+
+  if (recipe.durabilityCost !== undefined) {
+    extracting.durabilityCost = recipe.durabilityCost
+  }
+
+  event.custom(extracting).id(`kubejs:create_reautomated/advanced_extracting/${recipe.id}`)
 }
 
 function addNineToOneCompacting(event, id, input, output, heatRequirement) {
@@ -32,7 +66,13 @@ function addNineToOneCompacting(event, id, input, output, heatRequirement) {
   event.custom(recipe).id(`kubejs:create_reautomated/compacting/${id}`)
 }
 
+const SOURCE_FLUID = 'sauce:source_fluid'
+const SOURCE_PER_CYCLE = 50
+
 ServerEvents.recipes(event => {
+  event.remove({ id: 'createreautomated:extracting/gold_bits' })
+  event.remove({ id: 'createreautomated:advanced_extracting/gold_bits' })
+
   const extractingRecipes = [
     {
       id: 'coal_bits',
@@ -45,10 +85,20 @@ ServerEvents.recipes(event => {
       durabilityCost: 5
     },
     {
+      id: 'gold_bits',
+      drillTag: 'createreautomated:drills/at_least_tier_1',
+      node: '#createreautomated:ore_nodes/gold_nodes',
+      processingTime: 30720,
+      extractionQuantity: 1,
+      output: 'createreautomated:gold_bit',
+      outputCount: 4,
+      durabilityCost: 8
+    },
+    {
       id: 'redstone_bits',
-      drillTag: 'createreautomated:drills/at_least_tier_2',
+      drillTag: 'createreautomated:drills/at_least_tier_1',
       node: '#kubejs:ore_nodes/redstone_nodes',
-      processingTime: 25600,
+      processingTime: 30720,
       extractionQuantity: 1,
       output: 'kubejs:tiny_pile_of_redstone_dust',
       outputCount: 6,
@@ -66,9 +116,9 @@ ServerEvents.recipes(event => {
     },
     {
       id: 'lapis_bits',
-      drillTag: 'createreautomated:drills/at_least_tier_2',
+      drillTag: 'createreautomated:drills/at_least_tier_1',
       node: '#kubejs:ore_nodes/lapis_nodes',
-      processingTime: 25600,
+      processingTime: 30720,
       extractionQuantity: 1,
       output: 'kubejs:lapis_bit',
       outputCount: 6,
@@ -157,6 +207,47 @@ ServerEvents.recipes(event => {
   ]
 
   extractingRecipes.forEach(recipe => addExtracting(event, recipe))
+
+  const advancedExtractingRecipes = [
+    {
+      id: 'gold_bits',
+      drillTag: 'createreautomated:drills/at_least_tier_1',
+      node: '#createreautomated:ore_nodes/gold_nodes',
+      processingTime: 25600,
+      extractionQuantity: 1,
+      output: 'createreautomated:gold_bit',
+      outputCount: 6,
+      durabilityCost: 8,
+      fluid: SOURCE_FLUID,
+      fluidAmount: SOURCE_PER_CYCLE
+    },
+    {
+      id: 'redstone_bits',
+      drillTag: 'createreautomated:drills/at_least_tier_1',
+      node: '#kubejs:ore_nodes/redstone_nodes',
+      processingTime: 25600,
+      extractionQuantity: 1,
+      output: 'kubejs:tiny_pile_of_redstone_dust',
+      outputCount: 8,
+      durabilityCost: 8,
+      fluid: SOURCE_FLUID,
+      fluidAmount: SOURCE_PER_CYCLE
+    },
+    {
+      id: 'lapis_bits',
+      drillTag: 'createreautomated:drills/at_least_tier_1',
+      node: '#kubejs:ore_nodes/lapis_nodes',
+      processingTime: 25600,
+      extractionQuantity: 1,
+      output: 'kubejs:lapis_bit',
+      outputCount: 8,
+      durabilityCost: 8,
+      fluid: SOURCE_FLUID,
+      fluidAmount: SOURCE_PER_CYCLE
+    }
+  ]
+
+  advancedExtractingRecipes.forEach(recipe => addAdvancedExtracting(event, recipe))
 
   addNineToOneCompacting(event, 'coal', 'kubejs:coal_bit', 'minecraft:coal')
   addNineToOneCompacting(event, 'redstone', 'kubejs:tiny_pile_of_redstone_dust', 'minecraft:redstone')

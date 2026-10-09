@@ -14,4 +14,14 @@
 !config/iceandfire/**
 
 !config/createreautomated-common.toml
+!config/createreautomated-server.toml
+!config/createreautomatedtraces-common.toml
+!config/roosttraces-common.toml
 !config/radialresourcegating-common.toml
+!config/silentgear-common.toml
+!config/adaptive_starting_structure-common.toml
+!config/adaptive_starting_structure/
+!config/adaptive_starting_structure/**
+!config/ftbquests/
+!config/ftbquests/quests/
+!config/ftbquests/quests/**

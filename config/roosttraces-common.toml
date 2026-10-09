@@ -1,0 +1,26 @@
+[placement]
+	enabled = true
+	captureDuringRoostWorldgen = true
+	placeAfterChunkGenerated = true
+	# Default: 24
+	# Range: 4 ~ 64
+	scanRadius = 24
+	# Default: 48
+	# Range: 8 ~ 128
+	existingPairRadius = 48
+	# Default: 1
+	# Range: 1 ~ 16
+	maxPendingRoostsPerTick = 1
+	# Default: 4096
+	# Range: 64 ~ 65536
+	maxCandidateChecksPerRoost = 4096
+	registerInTraceIndex = true
+	debug = false
+
+[nodes]
+	useDatapackPools = true
+	inheritDefaultPool = true
+	fallbackToDefaultPool = true
+
+[replaceable]
+	ids = ["iceandfire:crackled_dirt", "iceandfire:crackled_gravel", "iceandfire:crackled_cobblestone", "iceandfire:chared_dirt", "iceandfire:chared_gravel", "iceandfire:chared_cobblestone", "iceandfire:frozen_dirt", "iceandfire:frozen_gravel", "iceandfire:frozen_cobblestone"]

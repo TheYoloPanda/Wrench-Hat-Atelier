@@ -152,3 +152,24 @@
 		# Default: 24
 		# Range: > -2147483648
 		toY = 24
+
+	#.
+	#Nether Quartz nodes specific configs.
+	[worldgen.nether_quartz]
+		#.
+		#.
+		# Default: 3
+		# Range: 0 ~ 6
+		faces = 3
+		#.
+		# Default: 50
+		# Range: 0 ~ 512
+		tries = 50
+		#.
+		# Default: 7
+		# Range: > -2147483648
+		fromY = 7
+		#.
+		# Default: 117
+		# Range: > -2147483648
+		toY = 117
