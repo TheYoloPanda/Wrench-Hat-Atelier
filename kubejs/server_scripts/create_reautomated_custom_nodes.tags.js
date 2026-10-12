@@ -45,6 +45,15 @@ const CUSTOM_NODE_TAGS = {
   ],
   'kubejs:ore_nodes/azure_silver_nodes': [
     'kubejs:azure_silver_node'
+  ],
+  'kubejs:ore_nodes/fire_nodes': [
+    'kubejs:fire_node'
+  ],
+  'kubejs:ore_nodes/ice_nodes': [
+    'kubejs:ice_node'
+  ],
+  'kubejs:ore_nodes/lightning_nodes': [
+    'kubejs:lightning_node'
   ]
 }
 

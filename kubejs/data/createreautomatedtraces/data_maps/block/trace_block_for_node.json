@@ -95,6 +95,18 @@
     "kubejs:azure_silver_node": {
       "trace_block": "silentgear:azure_silver_ore",
       "beam_color": "#66D7FF"
+    },
+    "kubejs:fire_node": {
+      "trace_block": "iceandfire:chared_stone",
+      "beam_color": "#FF6A1A"
+    },
+    "kubejs:ice_node": {
+      "trace_block": "iceandfire:frozen_stone",
+      "beam_color": "#7FDBFF"
+    },
+    "kubejs:lightning_node": {
+      "trace_block": "iceandfire:crackled_stone",
+      "beam_color": "#B48CFF"
     }
   }
 }

@@ -21,7 +21,10 @@ const CUSTOM_NODE_BLOCKS = [
   { id: 'end_draconium_node', displayName: 'End Draconium Node', baseStone: 'minecraft:end_stone', yield: 720 },
   { id: 'crimson_iron_node', displayName: 'Crimson Iron Node', baseStone: 'minecraft:netherrack', yield: 1760 },
   { id: 'blackstone_crimson_iron_node', displayName: 'Blackstone Crimson Iron Node', baseStone: 'minecraft:blackstone', yield: 2200 },
-  { id: 'azure_silver_node', displayName: 'Azure Silver Node', baseStone: 'minecraft:end_stone', yield: 1440 }
+  { id: 'azure_silver_node', displayName: 'Azure Silver Node', baseStone: 'minecraft:end_stone', yield: 1440 },
+  { id: 'fire_node', displayName: 'Fire Node', baseStone: 'iceandfire:chared_cobblestone', yield: 2400 },
+  { id: 'ice_node', displayName: 'Ice Node', baseStone: 'iceandfire:frozen_cobblestone', yield: 2400 },
+  { id: 'lightning_node', displayName: 'Lightning Node', baseStone: 'iceandfire:crackled_cobblestone', yield: 2400 }
 ]
 
 const CUSTOM_NODE_ITEMS = [
@@ -38,7 +41,10 @@ const CUSTOM_NODE_ITEMS = [
   { id: 'crimson_iron_bit', displayName: 'Crimson Iron Bit' },
   { id: 'azure_silver_bit', displayName: 'Azure Silver Bit' },
   { id: 'unstable_draconium_blend', displayName: 'Unstable Draconium Blend' },
-  { id: 'compressed_draconium_slug', displayName: 'Compressed Draconium Slug' }
+  { id: 'compressed_draconium_slug', displayName: 'Compressed Draconium Slug' },
+  { id: 'scorched_ore_cluster', displayName: 'Scorched Ore Cluster' },
+  { id: 'frozen_ore_cluster', displayName: 'Frozen Ore Cluster' },
+  { id: 'charged_ore_cluster', displayName: 'Charged Ore Cluster' }
 ]
 
 StartupEvents.registry('block', event => {
