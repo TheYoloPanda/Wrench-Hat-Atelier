@@ -57,6 +57,12 @@ const CUSTOM_NODE_TAGS = {
   ]
 }
 
+const ROOST_NODES = {
+  'roosttraces:fire_roost_nodes': 'kubejs:fire_node',
+  'roosttraces:ice_roost_nodes': 'kubejs:ice_node',
+  'roosttraces:lightning_roost_nodes': 'kubejs:lightning_node'
+}
+
 ServerEvents.tags('block', event => {
   const allNodes = []
 
@@ -68,4 +74,10 @@ ServerEvents.tags('block', event => {
   })
 
   allNodes.forEach(node => event.add('createreautomated:ore_nodes', node))
+
+  // Dragon Roosts only place their elemental node; the default pool stays as is.
+  Object.entries(ROOST_NODES).forEach(([tag, node]) => {
+    event.removeAll(tag)
+    event.add(tag, node)
+  })
 })
