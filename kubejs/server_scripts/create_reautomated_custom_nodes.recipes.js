@@ -69,6 +69,66 @@ function addNineToOneCompacting(event, id, input, output, heatRequirement) {
 const SOURCE_FLUID = 'sauce:source_fluid'
 const SOURCE_PER_CYCLE = 50
 
+// Dragon Roost nodes: tier_2 and at_least_tier_3 never match the same drill.
+const ELEMENTAL_DRILL_TIERS = [
+  {
+    suffix: 'tier_2',
+    drillTag: 'createreautomated:drills/tier_2',
+    processingTime: 30720,
+    outputCount: 3,
+    sourceProcessingTime: 25600,
+    sourceOutputCount: 4
+  },
+  {
+    suffix: 'tier_3',
+    drillTag: 'createreautomated:drills/at_least_tier_3',
+    processingTime: 25600,
+    outputCount: 4,
+    sourceProcessingTime: 20480,
+    sourceOutputCount: 5
+  }
+]
+
+const ELEMENTAL_NODES = [
+  {
+    node: '#kubejs:ore_nodes/fire_nodes',
+    cluster: 'scorched_ore_cluster',
+    crushingResults: [
+      { id: 'createreautomated:iron_bit' },
+      { chance: 0.4, id: 'createreautomated:gold_bit' },
+      { chance: 0.35, count: 2, id: 'kubejs:tiny_pile_of_redstone_dust' },
+      { chance: 0.4, count: 2, id: 'kubejs:coal_bit' },
+      { chance: 0.1, id: 'iceandfire:dragonscales_red' },
+      { chance: 0.1, id: 'iceandfire:dragonscales_bronze' }
+    ]
+  },
+  {
+    node: '#kubejs:ore_nodes/ice_nodes',
+    cluster: 'frozen_ore_cluster',
+    crushingResults: [
+      { id: 'kubejs:lapis_bit' },
+      { chance: 0.5, id: 'kubejs:silver_bit' },
+      { chance: 0.25, id: 'kubejs:tiny_pile_of_sapphire_dust' },
+      { chance: 0.15, id: 'createreautomated:diamond_bit' },
+      { chance: 0.1, id: 'iceandfire:dragonscales_blue' },
+      { chance: 0.1, id: 'iceandfire:dragonscales_white' }
+    ]
+  },
+  {
+    node: '#kubejs:ore_nodes/lightning_nodes',
+    cluster: 'charged_ore_cluster',
+    crushingResults: [
+      { id: 'createreautomated:copper_bit' },
+      { chance: 0.5, id: 'createreautomated:zinc_bit' },
+      { chance: 0.35, count: 2, id: 'kubejs:tiny_pile_of_redstone_dust' },
+      { chance: 0.4, id: 'kubejs:nether_quartz_bit' },
+      { chance: 0.15, id: 'minecraft:amethyst_shard' },
+      { chance: 0.1, id: 'iceandfire:dragonscales_electric' },
+      { chance: 0.1, id: 'iceandfire:dragonscales_amethyst' }
+    ]
+  }
+]
+
 ServerEvents.recipes(event => {
   event.remove({ id: 'createreautomated:extracting/gold_bits' })
   event.remove({ id: 'createreautomated:advanced_extracting/gold_bits' })
@@ -206,6 +266,21 @@ ServerEvents.recipes(event => {
     }
   ]
 
+  ELEMENTAL_NODES.forEach(element => {
+    ELEMENTAL_DRILL_TIERS.forEach(tier => {
+      extractingRecipes.push({
+        id: `${element.cluster}_${tier.suffix}`,
+        drillTag: tier.drillTag,
+        node: element.node,
+        processingTime: tier.processingTime,
+        extractionQuantity: 1,
+        output: `kubejs:${element.cluster}`,
+        outputCount: tier.outputCount,
+        durabilityCost: 10
+      })
+    })
+  })
+
   extractingRecipes.forEach(recipe => addExtracting(event, recipe))
 
   const advancedExtractingRecipes = [
@@ -246,6 +321,30 @@ ServerEvents.recipes(event => {
       fluidAmount: SOURCE_PER_CYCLE
     }
   ]
+
+  ELEMENTAL_NODES.forEach(element => {
+    ELEMENTAL_DRILL_TIERS.forEach(tier => {
+      advancedExtractingRecipes.push({
+        id: `${element.cluster}_${tier.suffix}`,
+        drillTag: tier.drillTag,
+        node: element.node,
+        processingTime: tier.sourceProcessingTime,
+        extractionQuantity: 1,
+        output: `kubejs:${element.cluster}`,
+        outputCount: tier.sourceOutputCount,
+        durabilityCost: 10,
+        fluid: SOURCE_FLUID,
+        fluidAmount: SOURCE_PER_CYCLE
+      })
+    })
+
+    event.custom({
+      type: 'create:crushing',
+      ingredients: [{ item: `kubejs:${element.cluster}` }],
+      processing_time: 250,
+      results: element.crushingResults
+    }).id(`kubejs:create_reautomated/crushing/${element.cluster}`)
+  })
 
   advancedExtractingRecipes.forEach(recipe => addAdvancedExtracting(event, recipe))
 
