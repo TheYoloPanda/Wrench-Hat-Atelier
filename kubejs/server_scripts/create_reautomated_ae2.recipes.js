@@ -12,6 +12,8 @@
     return ingredients
   }
 
+  // Certus Nodes yield bits only: Fragments come from the meteorite Flawless alone, so Matrix
+  // supply grows with the meteorites the player works, not with the nodes at the base.
   function addExtracting(event, recipe) {
     event.custom({
       type: 'createreautomated:extracting',
@@ -20,10 +22,7 @@
       processing_time: recipe.processingTime,
       extractionQuantity: 1,
       durabilityCost: recipe.durabilityCost,
-      results: [
-        { count: recipe.bitCount, id: CERTUS_QUARTZ_BIT },
-        { chance: recipe.fragmentChance, id: MATRIX_FRAGMENT }
-      ]
+      results: [{ count: recipe.bitCount, id: CERTUS_QUARTZ_BIT }]
     }).id(`${RECIPE_ROOT}/extracting/${recipe.id}`)
   }
 
@@ -55,7 +54,7 @@
 
   function addGrowthMatrixCompacting(event) {
     const ingredients = []
-    const fragments = createRepeatedItemIngredients(MATRIX_FRAGMENT, 4)
+    const fragments = createRepeatedItemIngredients(MATRIX_FRAGMENT, 9)
     const certusDust = createRepeatedItemIngredients('ae2:certus_quartz_dust', 4)
 
     for (let i = 0; i < fragments.length; i++) {
@@ -76,7 +75,7 @@
     }).id(`${RECIPE_ROOT}/compacting/certus_growth_matrix`)
   }
 
-  function addBuddingTransform(event, id, baseIngredients, output) {
+  function addNodeTransform(event, id, baseIngredients, output) {
     const ingredients = []
     for (let i = 0; i < baseIngredients.length; i++) {
       ingredients.push({ item: baseIngredients[i] })
@@ -100,32 +99,29 @@
     event.remove({ id: 'ae2:transform/flawed_budding_quartz' })
 
     addExtracting(event, {
-      id: 'damaged_budding_certus',
+      id: 'damaged_certus_node',
       drillTag: 'createreautomated:drills/at_least_tier_1',
-      node: 'ae2:damaged_budding_quartz',
+      node: 'kubejs:damaged_certus_node',
       processingTime: 17920,
       bitCount: 1,
-      fragmentChance: 0.005,
       durabilityCost: 3
     })
 
     addExtracting(event, {
-      id: 'chipped_budding_certus',
+      id: 'chipped_certus_node',
       drillTag: 'createreautomated:drills/at_least_tier_1',
-      node: 'ae2:chipped_budding_quartz',
+      node: 'kubejs:chipped_certus_node',
       processingTime: 27648,
       bitCount: 2,
-      fragmentChance: 0.0075,
       durabilityCost: 4
     })
 
     addExtracting(event, {
-      id: 'flawed_budding_certus',
+      id: 'flawed_certus_node',
       drillTag: 'createreautomated:drills/at_least_tier_2',
-      node: 'ae2:flawed_budding_quartz',
+      node: 'kubejs:flawed_certus_node',
       processingTime: 35328,
       bitCount: 3,
-      fragmentChance: 0.01,
       durabilityCost: 6
     })
 
@@ -149,23 +145,23 @@
     )
     addGrowthMatrixCompacting(event)
 
-    addBuddingTransform(
+    addNodeTransform(
       event,
-      'damaged_budding_quartz',
+      'damaged_certus_node',
       ['ae2:quartz_block', 'kubejs:certus_growth_matrix'],
-      'ae2:damaged_budding_quartz'
+      'kubejs:damaged_certus_node'
     )
-    addBuddingTransform(
+    addNodeTransform(
       event,
-      'chipped_budding_quartz',
-      ['ae2:damaged_budding_quartz'],
-      'ae2:chipped_budding_quartz'
+      'chipped_certus_node',
+      ['kubejs:damaged_certus_node'],
+      'kubejs:chipped_certus_node'
     )
-    addBuddingTransform(
+    addNodeTransform(
       event,
-      'flawed_budding_quartz',
-      ['ae2:chipped_budding_quartz'],
-      'ae2:flawed_budding_quartz'
+      'flawed_certus_node',
+      ['kubejs:chipped_certus_node'],
+      'kubejs:flawed_certus_node'
     )
   })
 })()
