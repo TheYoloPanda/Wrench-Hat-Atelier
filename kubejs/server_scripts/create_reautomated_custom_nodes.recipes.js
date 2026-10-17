@@ -263,6 +263,17 @@ ServerEvents.recipes(event => {
       output: 'kubejs:azure_silver_bit',
       outputCount: 4,
       durabilityCost: 8
+    },
+    // Exact tier_1 tag: the first diamonds without loot; Diamond and Netherite Drills keep the native recipes.
+    {
+      id: 'diamond_bits_iron_drill',
+      drillTag: 'createreautomated:drills/tier_1',
+      node: '#createreautomated:ore_nodes/diamond_nodes',
+      processingTime: 102400,
+      extractionQuantity: 4,
+      output: 'createreautomated:diamond_bit',
+      outputCount: 1,
+      durabilityCost: 100
     }
   ]
 
