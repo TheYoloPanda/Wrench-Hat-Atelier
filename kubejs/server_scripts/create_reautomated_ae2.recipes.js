@@ -86,10 +86,12 @@
       ingredients.push(chargedCertusIngredients[i])
     }
 
+    // Placed unstable, a used node drops nothing, so it cannot come back full through the next
+    // upgrade unless the player spends a Stabilizer on it.
     event.custom({
       type: 'ae2:transform',
       ingredients: ingredients,
-      result: { count: 1, id: output }
+      result: { count: 1, id: output, components: { 'minecraft:block_state': { stable: 'false' } } }
     }).id(`${RECIPE_ROOT}/transform/${id}`)
   }
 
