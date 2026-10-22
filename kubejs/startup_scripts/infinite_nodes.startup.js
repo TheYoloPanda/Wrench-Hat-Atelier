@@ -18,7 +18,37 @@ const INFINITE_NODE_BLOCKS = [
   { id: 'infinite_lightning_node', displayName: 'Infinite Lightning Node', baseStone: 'iceandfire:crackled_cobblestone', texture: 'kubejs:block/lightning_node' }
 ]
 
+// Catalysts thrown into the miniaturization field, one per node tier; each is made from the previous one.
+const VEIN_SCHEMAS = [
+  { id: 'common_vein_schema', displayName: 'Common Vein Schema' },
+  { id: 'infused_vein_schema', displayName: 'Infused Vein Schema' },
+  { id: 'draconic_vein_schema', displayName: 'Draconic Vein Schema' }
+]
+
+StartupEvents.registry('item', event => {
+  VEIN_SCHEMAS.forEach(schema => {
+    event.create(schema.id).displayName(schema.displayName)
+  })
+
+  // Shown by Occultism while the ritual runs.
+  event.create('draconic_vein_schema_ritual')
+    .displayName('Ritual: Draconic Vein Schema')
+    .texture('kubejs:item/draconic_vein_schema')
+})
+
 StartupEvents.registry('block', event => {
+  // Iron's Spellbooks has no mithril block, and the mithril pattern needs one.
+  event.create('mithril_block')
+    .displayName('Block of Mithril')
+    .soundType('metal')
+    .hardness(5.0)
+    .resistance(6.0)
+    .requiresTool(true)
+    .tagBoth('c:storage_blocks/mithril')
+    .tagBoth('c:storage_blocks')
+    .tagBlock('minecraft:mineable/pickaxe')
+    .tagBlock('minecraft:needs_iron_tool')
+
   INFINITE_NODE_BLOCKS.forEach(node => {
     event.create(node.id, 'createreautomated:ore_node')
       .displayName(node.displayName)
