@@ -15,7 +15,9 @@ const INFINITE_NODE_BLOCKS = [
   { id: 'infinite_ancient_debris_node', displayName: 'Infinite Ancient Debris Node', baseStone: 'minecraft:netherrack', texture: 'createreautomated:block/ancient_debris_node_side' },
   { id: 'infinite_fire_node', displayName: 'Infinite Fire Node', baseStone: 'iceandfire:chared_cobblestone', texture: 'kubejs:block/fire_node' },
   { id: 'infinite_ice_node', displayName: 'Infinite Ice Node', baseStone: 'iceandfire:frozen_cobblestone', texture: 'kubejs:block/ice_node' },
-  { id: 'infinite_lightning_node', displayName: 'Infinite Lightning Node', baseStone: 'iceandfire:crackled_cobblestone', texture: 'kubejs:block/lightning_node' }
+  { id: 'infinite_lightning_node', displayName: 'Infinite Lightning Node', baseStone: 'iceandfire:crackled_cobblestone', texture: 'kubejs:block/lightning_node' },
+  // Endgame only: a craftable Flawless would bring infinite Certus to the base early.
+  { id: 'infinite_certus_node', displayName: 'Infinite Certus Node', baseStone: 'ae2:quartz_block', texture: 'ae2:block/flawless_budding_quartz' }
 ]
 
 // Catalysts thrown into the miniaturization field, one per node tier; each is made from the previous one.
