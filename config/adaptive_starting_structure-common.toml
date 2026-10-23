@@ -65,6 +65,9 @@ maximumWaterFraction = 0.05
 #Whether supported standalone entities stored in the structure template are placed. Unsupported entity entries are warned and skipped; players, passengers, invalid structural coordinates, and safety-limit violations reject placement.
 placeTemplateEntities = false
 #Whether every column in the vanilla spawnRadius area must be safe. When false, only the exact spawn marker is validated.
+#The square of 2 x spawnRadius + 1 blocks centred on the marker must lie inside the template's horizontal bounds, 21 blocks across with the default spawnRadius of 10, or every site is rejected and the world keeps the vanilla spawn.
+#Each column is checked from the marker's feet height with a fall of at most 3 blocks, not on the column's top where vanilla puts arriving players.
+#Ignored while placePlayerAtSpawnMarker is true.
 requireSafeSpawnArea = false
 #Whether non-preferred land biomes may be accepted with lower priority.
 allowUnlistedLandBiomes = true
@@ -78,18 +81,20 @@ additionalPreferredBiomes = []
 #Additional biome IDs excluded from site selection.
 additionalExcludedBiomes = []
 #Biome IDs to drop from the built-in preferred list.
-#Unknown IDs are ignored with a warning.
+#IDs the registry or the list does not have, and IDs also added, are named in a warning.
 removedPreferredBiomes = []
 #Biome IDs to drop from the built-in excluded list.
-#Unknown IDs are ignored with a warning.
+#A biome in one of the excludedBiomeTags stays excluded: minecraft:meadow also needs minecraft:is_mountain out of that list.
+#IDs the registry or the list does not have, IDs also added, and IDs a tag still excludes are named in a warning.
 removedExcludedBiomes = []
-#What to do with a world whose starting-structure state blocks startup, which happens when the game died during placement.
+#What to do with a world whose starting-structure state blocks startup, which happens when the game died during placement or could not save it, or when the game died while a fallback decision was being applied or could not save it.
 #'block' refuses to start so the half-modified world is not accepted silently.
 #'skip' gives up on the starting structure and loads the world as it is, which may leave partial terrain or structure blocks behind.
+#With 'skip', a world applying its fallback decision gets the vanilla spawn that decision saved, on the first such start.
 blockedStateRecovery = "block"
 #Whether a player who arrives at the world spawn is moved onto the structure's spawn marker.
 #Vanilla picks a column near the world spawn and puts the player on that column's surface, which for a structure with a roof is the roof, so the marker is otherwise rarely where anyone actually arrives.
-#Only applies to players with no bed or charged respawn anchor who arrive inside the vanilla spawn area, and only until placed once.
+#Only applies to players with no bed or charged respawn anchor who arrive inside the vanilla spawn area: once per player at login, and on every respawn that falls back to the world spawn.
 placePlayerAtSpawnMarker = true
 #Generated structure IDs whose declared bounds are not trusted when checking whether the starting structure would collide with them.
 #Applied Energistics 2 declares every meteorite as a flat area of 144x144 blocks around a meteorite a few blocks wide, which rejects sites dozens of blocks away from it.
